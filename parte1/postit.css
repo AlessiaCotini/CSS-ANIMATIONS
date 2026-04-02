@@ -1,93 +1,55 @@
-@keyframes scendere{
-    0% {transform: translateY(-500px);
-    opacity: 0;}
-    25%{transform: translateY(-350px);
-    opacity: 0.25;}
-    50%{transform: translateY(-250px);
-    opacity: 0.50;}
-    75%{transform: translateY(-100px);
-    opacity: 0.75;}
-    100% {transform: translateY(0px);
-        opacity: 1;
-}}
-body{
-   /* background-image: url(../mockups/usarelavagna.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: center;
-    height: 100%;*/
-    background-color: rgba(128, 128, 128, 0.652);
+body {
+    background-color: rgba(128, 128, 128, 0.65);
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-around;
+    align-items: flex-start;
     padding: 5em;
-    
+    font-family: 'Indie Flower', cursive;
+    min-height: 100vh;
 }
-.postIt1, .postIt2, .postIt3, .postIt4, .postIt6, .postIt5{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border:1px solid transparent;
+
+@keyframes scendere {
+    0%   { transform: translateY(-500px) rotate(var(--rotation)); opacity: 0; }
+    100% { transform: translateY(0) rotate(var(--rotation)); opacity: 1; }
+}
+article {
     width: 250px;
     height: 175px;
-    display: flex;
-    margin:2 1.5em;
+    margin: 2em 1.5em;
     padding: 2em;
+    border-radius: 0.2em;
+    box-shadow: 15px 20px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 15px 20px 30px rgba(0,0,0,0.5);
-    opacity: 0;
-    animation: scendere 0.5s 1 ease-out forwards;
-    border-radius: 0.2em;
-    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: scendere 0.6s ease-out forwards;
 }
-.postIt1{
-animation-delay: 0s;
+
+.postIt1 { --rotation: -15deg; animation-delay: 0s; transform: rotate(-15deg); background-color: rgba(201, 187, 32, 0.95); }
+.postIt2 { --rotation: 15deg;  animation-delay: 0.5s; transform: rotate(15deg);  background-color: rgba(43, 201, 32, 0.92); }
+.postIt3 { --rotation: -8deg;  animation-delay: 1s;   transform: rotate(-8deg);  background-color: rgba(32, 167, 201, 0.91); }
+.postIt4 { --rotation: 15deg;  animation-delay: 1.5s; transform: rotate(15deg);  background-color: rgba(43, 201, 32, 0.92); }
+.postIt5 { --rotation: -8deg;  animation-delay: 2s;   transform: rotate(-8deg);  background-color: rgba(32, 167, 201, 0.91); }
+.postIt6 { --rotation: -15deg; animation-delay: 2.5s; transform: rotate(-15deg); background-color: rgba(201, 187, 32, 0.95); }
+
+article:hover {
+    transform: scale(2) ;
+    z-index: 10;
+    box-shadow: 20px 25px 40px rgba(0,0,0,0.6);
 }
-.postIt2{
-animation-delay: 1.0s;
+
+article h1, article p {
+    text-align: center;
+    margin: 0.2em 0;
 }
-.postIt3{
-animation-delay: 1.5s;
-}
-.postIt4{
-animation-delay: 2s;
-}
-.postIt5{
-animation-delay: 2.5s;
-}
-.postIt6{
-animation-delay: 3s;
-}
-.postIt2, .postIt4{
- background-color: rgba(43, 201, 32, 0.915);
- rotate: 15deg;
-}
-.postIt3, .postIt5{
- background-color: rgba(32, 167, 201, 0.582);
- rotate: -8deg;
-}
-.postIt1, .postIt6{
- background-color: rgba(201, 187, 32, 0.582);
- rotate: -15deg
-}
-.postIt1 p, .postIt2 p, .postIt3 p, .postIt4 p, .postIt5 p, .postIt6 p,.postIt1 h1, .postIt2 h1, .postIt3 h1, .postIt4 h1, .postIt6 h1, .postIt5 h1{
- padding:5px;
-   text-align: center;
-}
-.puntina{
+.puntina {
+    font-size: 4em;
     color: rgb(124, 31, 31);
     text-align: center;
-    vertical-align: super;
-    margin-bottom: 2%;
-    font-size: 4em;
-}
-.divPostIt{
-    width: 100%;
-    height: 100%;
-}
-.postIt1:hover, .postIt2:hover, .postIt3:hover, .postIt4:hover, .postIt5:hover, .postIt6:hover{
-    transform: scale(3) rotate(15deg);
-    z-index: 10;
-
+    line-height: 0.8em;
 }
