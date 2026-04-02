@@ -7,4 +7,29 @@
 6 animare le altre 2 parole
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
-
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5em;
+}
+main div{
+     padding: 3em;
+    border:1px solid black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
+    line-height: 35px;
+    border-radius: 2em;
+    background-attachment: fixed;
+}
+.parole{
+    color: gray;
+}
+.parole i {
+    display: none;        
+    font-style: italic;
+    transition: opacity 0.5s ease;
+}
+.parole i.show {
+    display: inline;
+    opacity: 1;
+}

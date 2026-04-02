@@ -27,5 +27,18 @@
 				</p>
 			</div>
 		</main>
+		<script>
+
+			const items = document.querySelectorAll('.parole i');
+let index = 0;
+
+function showNext() {
+    items.forEach((item, i) => item.classList.remove('show')); // nasconde tutti
+    items[index].classList.add('show');                        // mostra uno
+    index = (index + 1) % items.length;                        // passa al prossimo
+}
+showNext();
+setInterval(showNext, 2000);
+		</script>
     </body>
 </html>
