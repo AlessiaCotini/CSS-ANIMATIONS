@@ -1,0 +1,93 @@
+@keyframes scendere{
+    0% {transform: translateY(-500px);
+    opacity: 0;}
+    25%{transform: translateY(-350px);
+    opacity: 0.25;}
+    50%{transform: translateY(-250px);
+    opacity: 0.50;}
+    75%{transform: translateY(-100px);
+    opacity: 0.75;}
+    100% {transform: translateY(0px);
+        opacity: 1;
+}}
+body{
+   /* background-image: url(../mockups/usarelavagna.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    height: 100%;*/
+    background-color: rgba(128, 128, 128, 0.652);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5em;
+    
+}
+.postIt1, .postIt2, .postIt3, .postIt4, .postIt6, .postIt5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border:1px solid transparent;
+    width: 250px;
+    height: 175px;
+    display: flex;
+    margin:2 1.5em;
+    padding: 2em;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 15px 20px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: scendere 0.5s 1 ease-out forwards;
+    border-radius: 0.2em;
+    position: relative;
+}
+.postIt1{
+animation-delay: 0s;
+}
+.postIt2{
+animation-delay: 1.0s;
+}
+.postIt3{
+animation-delay: 1.5s;
+}
+.postIt4{
+animation-delay: 2s;
+}
+.postIt5{
+animation-delay: 2.5s;
+}
+.postIt6{
+animation-delay: 3s;
+}
+.postIt2, .postIt4{
+ background-color: rgba(43, 201, 32, 0.915);
+ rotate: 15deg;
+}
+.postIt3, .postIt5{
+ background-color: rgba(32, 167, 201, 0.582);
+ rotate: -8deg;
+}
+.postIt1, .postIt6{
+ background-color: rgba(201, 187, 32, 0.582);
+ rotate: -15deg
+}
+.postIt1 p, .postIt2 p, .postIt3 p, .postIt4 p, .postIt5 p, .postIt6 p,.postIt1 h1, .postIt2 h1, .postIt3 h1, .postIt4 h1, .postIt6 h1, .postIt5 h1{
+ padding:5px;
+   text-align: center;
+}
+.puntina{
+    color: rgb(124, 31, 31);
+    text-align: center;
+    vertical-align: super;
+    margin-bottom: 2%;
+    font-size: 4em;
+}
+.divPostIt{
+    width: 100%;
+    height: 100%;
+}
+.postIt1:hover, .postIt2:hover, .postIt3:hover, .postIt4:hover, .postIt5:hover, .postIt6:hover{
+    transform: scale(3) rotate(15deg);
+    z-index: 10;
+
+}
